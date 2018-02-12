@@ -1,3 +1,5 @@
+import React from "react";
+
 // Create a new component. This component shuld produce some html
 
 const App = () => { // const는 재할당 하지 못함
@@ -6,3 +8,5 @@ const App = () => { // const는 재할당 하지 못함
 
 // Take this component's generated HTML and put it on the page
 // (in the DOM)
+
+React.render(App);
