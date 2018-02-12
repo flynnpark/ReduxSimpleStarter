@@ -10,4 +10,4 @@ const App = () => { // const는 재할당 하지 못함
 // Take this component's generated HTML and put it on the page
 // (in the DOM)
 
-ReactDOM.render(App);
+ReactDOM.render(<App />);
