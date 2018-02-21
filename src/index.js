@@ -1,11 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import API_KEY from '../config.js';
+import SearchBar from './components/search_bar';
 
 // Create a new component. This component shuld produce some html
 
-const App = () => { // const는 재할당 하지 못함
-    return <div>Hi!</div>;
-}
+const App = () => {
+    // const는 재할당 하지 못함
+    return (
+        <div>
+            <SearchBar />
+        </div>
+    );
+};
 
 // Take this component's generated HTML and put it on the page
 // (in the DOM)
