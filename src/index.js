@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import API_KEY from '../config.js';
+import YTSearch from 'youtube-api-search';
+import { API_KEY } from '../config.js';
 import SearchBar from './components/search_bar';
+
+YTSearch({ key: API_KEY, term: 'samsung' }, data => {
+    console.log(data);
+});
 
 // Create a new component. This component shuld produce some html
 
