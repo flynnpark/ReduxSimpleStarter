@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import { API_KEY } from '../config.js';
 import SearchBar from './components/search_bar';
+import VideoList from './components/video_list';
 
 // Create a new component. This component shuld produce some html
 class App extends Component {
@@ -15,11 +16,13 @@ class App extends Component {
             this.setState({ videos });
         });
     }
+
     render() {
         // const는 재할당 하지 못함
         return (
             <div>
                 <SearchBar />
+                <VideoList videos={this.state.videos} />
             </div>
         );
     }
