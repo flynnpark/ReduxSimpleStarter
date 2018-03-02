@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import _ from 'lodash';
 import YTSearch from 'youtube-api-search';
 import { API_KEY } from '../config.js';
 import SearchBar from './components/search_bar';
@@ -29,7 +30,9 @@ class App extends Component {
     }
 
     render() {
-        // const는 재할당 하지 못함
+        const videoSearch = _.debounce(term => {
+            this.videoSearch(term);
+        }, 400);
         return (
             <div>
                 <SearchBar
