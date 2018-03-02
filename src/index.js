@@ -16,7 +16,11 @@ class App extends Component {
             selectedVideo: null
         };
 
-        YTSearch({ key: API_KEY, term: 'samsung' }, videos => {
+        this._videoSearch('galaxy s9');
+    }
+
+    _videoSearch(term) {
+        YTSearch({ key: API_KEY, term }, videos => {
             this.setState({
                 videos,
                 selectedVideo: videos[0]
@@ -28,7 +32,9 @@ class App extends Component {
         // const는 재할당 하지 못함
         return (
             <div>
-                <SearchBar />
+                <SearchBar
+                    onSearchTermChange={term => this._videoSearch(term)}
+                />
                 <VideoDetail video={this.state.selectedVideo} />
                 <VideoList
                     onVideoSelect={selectedVideo =>
